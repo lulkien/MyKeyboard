@@ -1283,7 +1283,7 @@
 	)
 	(global_label "R5"
 		(shape input)
-		(at 137.16 100.33 0)
+		(at 137.16 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1293,7 +1293,7 @@
 		)
 		(uuid "d4fa9879-28df-4436-81c0-19525163a7c3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 142.6247 100.33 0)
+			(at 142.6247 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1349,7 +1349,7 @@
 	)
 	(global_label "R3"
 		(shape input)
-		(at 137.16 107.95 0)
+		(at 137.16 100.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1359,7 +1359,7 @@
 		)
 		(uuid "e372d553-2856-4cef-b7ab-b75146ba2798")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 142.6247 107.95 0)
+			(at 142.6247 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
