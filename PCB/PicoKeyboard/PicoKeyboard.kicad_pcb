@@ -8527,7 +8527,7 @@
 				)
 			)
 		)
-		(property "Value" "Add"
+		(property "Value" "Equals"
 			(at 0 8 0)
 			(layer "F.Fab")
 			(uuid "f7c6e46a-1eb6-4428-b89b-8044aafb543c")
@@ -11616,7 +11616,7 @@
 			)
 		)
 		(fp_text user "SWCLK"
-			(at -2.54 20.25 360)
+			(at -2.54 20.25 0)
 			(layer "F.SilkS")
 			(uuid "584d755e-90f0-44b2-9a36-99e625005542")
 			(effects
@@ -11748,7 +11748,7 @@
 			)
 		)
 		(fp_text user "GND"
-			(at 0 21 360)
+			(at 0 21 0)
 			(layer "F.SilkS")
 			(uuid "cd9700b4-9e9b-4eeb-9545-0c90412354cd")
 			(effects
@@ -11825,7 +11825,7 @@
 			)
 		)
 		(fp_text user "SWDIO"
-			(at 2.54 20.25 360)
+			(at 2.54 20.25 0)
 			(layer "F.SilkS")
 			(uuid "e502bad2-3cfc-4867-b448-50692ecc3407")
 			(effects
@@ -72247,7 +72247,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "C_Small"
 			(at 1.969375 0 180)
 			(layer "B.SilkS")
 			(uuid "b3374e23-15f4-449b-b005-866ab081ed55")
@@ -80443,7 +80443,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "C_Small"
 			(at 1.869375 0 180)
 			(layer "B.SilkS")
 			(uuid "fa888eda-7394-4618-9574-15f721ac59f4")
