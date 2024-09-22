@@ -7231,7 +7231,7 @@
 				)
 			)
 		)
-		(property "Value" "R.Shift"
+		(property "Value" "RShift"
 			(at 214.63 205.74 0)
 			(effects
 				(font
@@ -7815,7 +7815,7 @@
 				)
 			)
 		)
-		(property "Value" "Backtick"
+		(property "Value" "Tilde"
 			(at 100.33 104.14 0)
 			(effects
 				(font
@@ -7883,7 +7883,7 @@
 				)
 			)
 		)
-		(property "Value" "]"
+		(property "Value" "RBrace"
 			(at 252.73 180.34 0)
 			(effects
 				(font
@@ -11343,7 +11343,7 @@
 				)
 			)
 		)
-		(property "Value" "L.Shift"
+		(property "Value" "LShift"
 			(at 100.33 180.34 0)
 			(effects
 				(font
@@ -14599,7 +14599,7 @@
 				)
 			)
 		)
-		(property "Value" "["
+		(property "Value" "LBrace"
 			(at 240.03 154.94 0)
 			(effects
 				(font
@@ -14891,7 +14891,7 @@
 				)
 			)
 		)
-		(property "Value" "Pipe"
+		(property "Value" "BSlash"
 			(at 240.03 205.74 0)
 			(effects
 				(font
