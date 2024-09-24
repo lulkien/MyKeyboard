@@ -5,14 +5,18 @@
 #![no_std]
 
 mod debounce;
+mod hardware_config;
 mod hid_class;
 mod hid_descriptor;
 mod key_codes;
 mod key_mapping;
+mod key_position;
 mod key_scan;
 
 use crate::{
+    hardware_config::*,
     hid_class::HidClass,
+    key_position::*,
     key_scan::{KeyboardReport, TRANSPOSED_NORMAL_LAYER_MAPPING},
 };
 use core::{cell::RefCell, convert::Infallible};
@@ -32,23 +36,11 @@ use rp2040_hal::{
 };
 use usb_device::{bus::UsbBusAllocator, device::UsbDeviceBuilder, prelude::*};
 
-/// The rate of polling of the keyboard itself in firmware.
-const SCAN_LOOP_RATE_MS: u32 = 1;
-/// The number of milliseconds to wait until a "key-off-then-key-on" in quick succession is allowed.
-const DEBOUNCE_MS: u8 = 6;
-
-const DEBOUNCE_TICKS: u8 = DEBOUNCE_MS / (SCAN_LOOP_RATE_MS as u8);
-
 /// The linker will place this boot block at the start of our program image. We
 /// need this to help the ROM bootloader get our code up and running.
 #[link_section = ".boot2"]
 #[used]
 pub static BOOT2: [u8; 256] = rp2040_boot2::BOOT_LOADER_W25Q080;
-
-const NUM_COLS: usize = 13;
-const NUM_ROWS: usize = 6;
-
-const EXTERNAL_CRYSTAL_FREQUENCY_HZ: u32 = 12_000_000;
 
 /// The USB Device Driver (shared with the interrupt).
 static mut USB_DEVICE: Option<UsbDevice<usb::UsbBus>> = None;
@@ -59,11 +51,6 @@ static mut USB_BUS: Option<UsbBusAllocator<usb::UsbBus>> = None;
 /// The USB Human Interface Device Driver (shared with the interrupt).
 static USB_HID_CLASS: Mutex<RefCell<Option<HidClass<usb::UsbBus>>>> =
     Mutex::new(RefCell::new(None));
-
-#[defmt::panic_handler]
-fn panic() -> ! {
-    cortex_m::asm::udf()
-}
 
 #[cortex_m_rt::entry]
 fn main() -> ! {
@@ -117,6 +104,8 @@ fn main() -> ! {
         &mut pins.gpio12.into_push_pull_output(),
     ];
 
+    let mut caps_led = pins.gpio25.into_push_pull_output();
+
     // Initialize a delay for accurate sleeping.
     let mut delay = cortex_m::delay::Delay::new(core.SYST, clocks.system_clock.freq().to_Hz());
     let timer = rp2040_hal::Timer::new(pac.TIMER, &mut pac.RESETS, &clocks);
@@ -135,7 +124,7 @@ fn main() -> ! {
     let scan = KeyScan::scan(&mut rows, &mut cols, &mut delay, &mut debounce);
 
     // If the Escape key is pressed during power-on, we should go into bootloader mode.
-    if scan[0][0] {
+    if scan[ESC_KEY.row][ESC_KEY.col] {
         let gpio_activity_pin_mask = 0;
         let disable_interface_mask = 0;
         info!("Escape key detected on boot, going into bootloader mode.");
@@ -166,7 +155,7 @@ fn main() -> ! {
     // https://github.com/obdev/v-usb/blob/7a28fdc685952412dad2b8842429127bc1cf9fa7/usbdrv/USB-IDs-for-free.txt#L128
     let keyboard_usb_device = UsbDeviceBuilder::new(bus_allocator_ref, UsbVidPid(0x16c0, 0x27db))
         .supports_remote_wakeup(true)
-        .strings(&[StringDescriptors::default().manufacturer("bschwind").product("key ripper")])
+        .strings(&[StringDescriptors::default().manufacturer("lulkien").product("keywi")])
         .unwrap()
         .build();
 
@@ -192,6 +181,7 @@ fn main() -> ! {
     loop {
         if tick_count_down.wait().is_ok() {
             let scan = KeyScan::scan(&mut rows, &mut cols, &mut delay, &mut debounce);
+
             let report: KeyboardReport = scan.into();
 
             if report != last_report {
@@ -215,6 +205,11 @@ fn main() -> ! {
                     } else {
                         // Only assign to last_report if it was successfully reported.
                         last_report = report;
+                        if last_report.is_capslock_enabled() {
+                            let _ = caps_led.set_high();
+                        } else {
+                            let _ = caps_led.set_low();
+                        }
                     }
                 });
             }
@@ -234,4 +229,9 @@ unsafe fn USBCTRL_IRQ() {
 
         usb_dev.poll(&mut [hid_class]);
     });
+}
+
+#[defmt::panic_handler]
+fn panic() -> ! {
+    cortex_m::asm::udf()
 }

@@ -69,6 +69,10 @@ impl KeyboardReport {
             self.keycodes[5],
         ]
     }
+
+    pub fn is_capslock_enabled(&self) -> bool {
+        self.leds & 0x01 != 0
+    }
 }
 
 impl<const NUM_ROWS: usize, const NUM_COLS: usize> From<KeyScan<NUM_ROWS, NUM_COLS>>
