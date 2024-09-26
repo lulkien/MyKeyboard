@@ -5,6 +5,11 @@ use defmt::Format;
 #[derive(Copy, Clone, Format, PartialEq)]
 pub enum KeyCode {
     Empty = 0x0,
+
+    ErrRollOver = 0x01,
+    ErrPostFail = 0x02,
+    ErrUndefined = 0x03,
+
     A = 0x04,
     B = 0x05,
     C = 0x06,
@@ -31,6 +36,7 @@ pub enum KeyCode {
     X = 0x1B,
     Y = 0x1C,
     Z = 0x1D,
+
     Num1 = 0x1E,
     Num2 = 0x1F,
     Num3 = 0x20,
@@ -41,6 +47,7 @@ pub enum KeyCode {
     Num8 = 0x25,
     Num9 = 0x26,
     Num0 = 0x27,
+
     Enter = 0x28,
     Escape = 0x29,
     Backspace = 0x2A,
@@ -51,6 +58,7 @@ pub enum KeyCode {
     LBrace = 0x2F,
     RBrace = 0x30,
     BSlash = 0x31,
+    HashTilde = 0x32, // Non US keyboard # and ~
     Semicolon = 0x33,
     Quote = 0x34,
     Tilde = 0x35,
@@ -58,6 +66,7 @@ pub enum KeyCode {
     Period = 0x37,
     Slash = 0x38,
     CapsLock = 0x39,
+
     F1 = 0x3A,
     F2 = 0x3B,
     F3 = 0x3C,
@@ -70,8 +79,10 @@ pub enum KeyCode {
     F10 = 0x43,
     F11 = 0x44,
     F12 = 0x45,
-    Print = 0x46,
 
+    Print = 0x46,
+    ScrollLock = 0x47,
+    Pause = 0x48,
     Insert = 0x49,
     Home = 0x4A,
     PgUp = 0x4B,
@@ -84,25 +95,71 @@ pub enum KeyCode {
     Down = 0x51,
     Up = 0x52,
 
-    // Media Keys
+    NumLock = 0x53,
+    KpSlash = 0x54,
+    KpAsterisk = 0x55,
+    KpMinus = 0x56,
+    KpPlus = 0x57,
+    KpEnter = 0x58,
+    KpNum1 = 0x59,
+    KpNum2 = 0x5A,
+    KpNum3 = 0x5B,
+    KpNum4 = 0x5C,
+    KpNum5 = 0x5D,
+    KpNum6 = 0x5E,
+    KpNum7 = 0x5F,
+    KpNum8 = 0x60,
+    KpNum9 = 0x61,
+    KpNum0 = 0x62,
+    KpDot = 0x63,
+
+    Compose = 0x65,
+    Power = 0x66,
+    KpEquals = 0x67,
+
+    F13 = 0x68,
+    F14 = 0x69,
+    F15 = 0x6A,
+    F16 = 0x6B,
+    F17 = 0x6C,
+    F18 = 0x6D,
+    F19 = 0x6E,
+    F20 = 0x6F,
+    F21 = 0x70,
+    F22 = 0x71,
+    F23 = 0x72,
+    F24 = 0x73,
+
+    Open = 0x74,
+    Help = 0x75,
+    Props = 0x76,
+    Front = 0x77,
+    Stop = 0x78,
+    Again = 0x79,
+    Undo = 0x7A,
+    Cut = 0x7B,
+    Copy = 0x7C,
+    Paste = 0x7D,
+    Find = 0x7E,
     VolumeMute = 0x7F,
     VolumeUp = 0x80,
     VolumeDown = 0x81,
 
-    // Keypad keys
-    LeftParen = 0xB6,
-    RightParen = 0xB7,
+    KpComma = 0x85,
+
+    KpLParen = 0xB6,
+    KpRParen = 0xB7,
 
     // Modifier keys
     Fn = 0xF0,
-    LShift = 0xF1,
-    LCtrl = 0xF2,
+    LCtrl = 0xF1,
+    LShift = 0xF2,
     LAlt = 0xF3,
     LSuper = 0xF4,
-    RSuper = 0xF5,
-    RAlt = 0xF6,
-    RCtrl = 0xF7,
-    RShift = 0xF8,
+    RCtrl = 0xF5,
+    RShift = 0xF6,
+    RAlt = 0xF7,
+    RSuper = 0xF8,
 }
 
 impl KeyCode {
