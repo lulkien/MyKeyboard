@@ -1,0 +1,12 @@
+Header (
+    top: (44.7, 143.8),
+    width: 5.8,
+    height: 13.3,
+)
+
+Pico (
+    top: (120.6, 148.7),
+    width: 54.1,
+    height: 24,1,
+)
+
