@@ -1,0 +1,23 @@
+Plate (
+    geometry: [
+        Rectangle (
+            name: "USB in header",
+            top: (44.7, 143.8),
+            width: 5.8,
+            height: 13.3,
+        ),
+        Rectangle (
+            name: "Pico",
+            top: (120.6, 148.7),
+            width: 54.1,
+            height: 24,1,
+        ),
+        Rectangle (
+            name: "screen header",
+            top: (253.3, 145.8),
+            width: 13.3,
+            header: 5.8,
+        ),
+    ],
+)
+
