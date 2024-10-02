@@ -1,0 +1,9 @@
+pcb width: 295.275mm
+pcb height: 152.4mm
+
+plate to pcb: 3.5mm
+
+plate slot:
+    width: 152.4mm
+    height: 1.5mm
+    depth: 2mm
