@@ -43,7 +43,7 @@ module top_piece() {
         translate([0, -(19.05 - 3.76), 0]) hull() {
             $fn = 200;
             border_rad = 1;
-            width = 288.9;
+            width = 286;
             height = 116.3;
             depth = 20;
             
@@ -66,7 +66,7 @@ module top_piece() {
         translate([0, 61.55, -2.5]) hull() {
             $fn = 200;
             border_rad = 1;
-            width = 288.9;
+            width = 286;
             height = 30.32;
             depth = 7;
             
