@@ -4,7 +4,7 @@ module bottom_piece() {
             difference() {
                 hull() {
                     $fn = 200;
-                    border_rad = 1;
+                    border_rad = 2;
                     width = 303.3;
                     height = 168.4;
                     depth = 15;
