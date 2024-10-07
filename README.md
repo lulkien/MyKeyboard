@@ -7,8 +7,8 @@ This is the design for my custom TLK, where I'm gonna make my own keyboard from 
 ## Todo:
 
 - [x] PCB Design (Kicad 8)
-- [ ] Case Design for CNC (use Ketchup or FOSS alternative)
-- [ ] Firmware (use Rust)
+- [x] Case Design (OpenSCAD)
+- [x] Firmware (use Rust)
 
 ## References:
 
