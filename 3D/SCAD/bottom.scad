@@ -1,38 +1,37 @@
 module bottom_piece() {
     difference() {
-        union() {
-            difference() {
-                hull() {
-                    $fn = 200;
-                    border_rad = 2;
-                    width = 303.3;
-                    height = 168.4;
-                    depth = 15;
-                    
-                    pos_cylinder_x = width / 2 - border_rad;
-                    pos_cylinder_y = height / 2 - border_rad; 
-                    
-                    position = [
-                        [pos_cylinder_x, pos_cylinder_y, 0],
-                        [-pos_cylinder_x, pos_cylinder_y, 0],
-                        [pos_cylinder_x, -pos_cylinder_y, 0],
-                        [-pos_cylinder_x, -pos_cylinder_y, 0],
-                    ];
-                    
-                    for (pos = position) {
-                        translate(pos)  cylinder(h = depth, r = border_rad, center = true);
-                    }
+        difference() {
+            hull() {
+                $fn = 200;
+                border_rad = 3;
+                width = 303.3;
+                height = 168.4;
+                depth = 15;
+                
+                pos_cylinder_x = width / 2 - border_rad;
+                pos_cylinder_y = height / 2 - border_rad; 
+                
+                position = [
+                    [pos_cylinder_x, pos_cylinder_y, 0],
+                    [-pos_cylinder_x, pos_cylinder_y, 0],
+                    [pos_cylinder_x, -pos_cylinder_y, 0],
+                    [-pos_cylinder_x, -pos_cylinder_y, 0],
+                ];
+                
+                for (pos = position) {
+                    translate(pos)  cylinder(h = depth, r = border_rad, center = true);
                 }
-                
-                // main cut
-                translate([0, 0, 3.5]) cube([400, 154.4, 10], center = true);
-                
-                // Side cut
-                translate([148.65, 0, 3]) cube([2, 160.4, 11], center = true);
-                translate([-148.65, 0, 3]) cube([2, 160.4, 11], center = true);
             }
             
-            translate([0, 80.225, 2.5]) cube([291.3, 7.95, 10], center = true);
+            // main cut
+            translate([0, -0.4, 3.5]) cube([400, 153.6, 10], center = true);
+            
+            // Side cut
+            translate([149.1, 0, 3.5]) cube([7, 154.4, 10], center = true);
+            translate([148.65, 0, 3]) cube([2, 160.4, 11], center = true);
+            
+            translate([-149.1, 0, 3.5]) cube([7, 154.4, 10], center = true);
+            translate([-148.65, 0, 3]) cube([2, 160.4, 11], center = true);
         }
         
         // Screw holes
@@ -74,3 +73,5 @@ module bottom_piece() {
         }
     }
 }
+
+bottom_piece();
