@@ -2133,6 +2133,38 @@
 		(color 0 0 0 0)
 		(uuid "da3eefb3-2443-4466-991f-7225d823d221")
 	)
+	(no_connect
+		(at 110.49 53.34)
+		(uuid "44c1587f-6f84-44b5-ab31-ee7900fd3c0a")
+	)
+	(no_connect
+		(at 154.94 129.54)
+		(uuid "50ed2629-2ecb-4117-8dff-a7e440b5ab90")
+	)
+	(no_connect
+		(at 154.94 134.62)
+		(uuid "5786b57e-4ca7-4f25-a70e-ad57b3560d07")
+	)
+	(no_connect
+		(at 110.49 58.42)
+		(uuid "764e27c2-6294-4cd3-9c33-5575644ecb9f")
+	)
+	(no_connect
+		(at 110.49 55.88)
+		(uuid "9298f205-e339-4357-b2f9-2d125e506c9a")
+	)
+	(no_connect
+		(at 154.94 127)
+		(uuid "a5133b55-150c-4dd8-aa4d-6381acfe4516")
+	)
+	(no_connect
+		(at 110.49 50.8)
+		(uuid "b28f1df6-8929-4c6e-9782-a771a8be55e8")
+	)
+	(no_connect
+		(at 154.94 132.08)
+		(uuid "f7326006-4d4a-4e7c-9c95-af3391e35f8b")
+	)
 	(wire
 		(pts
 			(xy 63.5 50.8) (xy 63.5 52.07)
@@ -3485,7 +3517,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+		(property "Footprint" "SparkFun-Capacitor:C_0603_1608Metric"
 			(at 105.41 74.93 0)
 			(effects
 				(font
@@ -3621,7 +3653,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+		(property "Footprint" "SparkFun-Capacitor:C_0603_1608Metric"
 			(at 138.43 124.46 0)
 			(effects
 				(font
@@ -3688,7 +3720,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
 			(at 69.85 44.958 0)
 			(effects
 				(font
@@ -3758,7 +3790,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+		(property "Footprint" "SparkFun-Capacitor:C_0603_1608Metric"
 			(at 144.78 124.46 0)
 			(effects
 				(font
@@ -4303,7 +4335,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+		(property "Footprint" "SparkFun-Capacitor:C_0603_1608Metric"
 			(at 114.3 74.93 0)
 			(effects
 				(font
@@ -4363,7 +4395,7 @@
 				)
 			)
 		)
-		(property "Value" "USB_C_Receptacle_USB2.0_14P"
+		(property "Value" "USB_C_Receptacle_USB2.0_16P"
 			(at 48.26 33.02 0)
 			(effects
 				(font
@@ -4371,7 +4403,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4110"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_HCTL_HC-TYPE-C-16P-01A"
 			(at 52.07 53.34 0)
 			(effects
 				(font
@@ -4477,7 +4509,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "SparkFun-Resistor:R_0603_1608Metric"
 			(at 69.85 47.498 0)
 			(effects
 				(font
