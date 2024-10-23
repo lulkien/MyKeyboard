@@ -19,6 +19,6 @@ pub const FN_LAYER_MAPPING: [[KeyCode; NUM_COLS]; NUM_ROWS] = [
     [ Empty,     Empty,   Empty,   Empty,  End,    Empty,  Home,   Empty,  Empty,  Empty,    Empty,      Empty,     Empty    ],
     [ Empty,     Empty,   Empty,   Empty,  Empty,  Empty,  Empty,  Empty,  Insert, Empty,    Empty,      Empty,     Empty    ],
     [ Empty,     Empty,   Empty,   Empty,  PgDn,   Empty,  Left,   Down,    Up,    Right,    Empty,      Empty,     Empty    ],
-    [ Empty,     Empty,   Delete,  Empty,  Empty,  PgUp,   Empty,  Empty,  Empty,  Empty,    Empty,      Empty,     Empty    ],
-    [ Empty,     Empty,   Empty,   Empty,  Empty,  Empty,  Empty,  Empty,  Empty,  Empty,    Empty,      Empty,     Empty    ],
+    [ LShift,    Empty,   Delete,  Empty,  Empty,  PgUp,   Empty,  Empty,  Empty,  Empty,    Empty,      Empty,     Empty    ],
+    [ LCtrl,     LSuper,   LAlt,   Empty,  Space,  Empty,  Empty,  Empty,  Empty,  RShift,   Enter,      Empty,     Empty    ],
 ];
